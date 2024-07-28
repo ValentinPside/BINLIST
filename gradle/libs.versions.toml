@@ -19,6 +19,7 @@ navigation-fragment-ktx = "2.7.7"
 okhttp = "4.12.0"
 retrofit = "2.10.0"
 roomRuntime = "2.6.1"
+legacySupportV4 = "1.0.0"
 
 [libraries]
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragment-ktx" }
@@ -49,6 +50,7 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

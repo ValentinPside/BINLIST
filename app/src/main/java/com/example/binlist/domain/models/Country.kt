@@ -1,4 +1,4 @@
-package com.example.binlist.domain
+package com.example.binlist.domain.models
 
 data class Country(
     val name: String,

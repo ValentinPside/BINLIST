@@ -1,7 +1,7 @@
 package com.example.binlist.data
 
 import com.example.binlist.data.network.NetworkServiceAPI
-import com.example.binlist.domain.Card
+import com.example.binlist.domain.models.Card
 import com.example.binlist.domain.Repository
 import com.example.binlist.utils.asCard
 import kotlinx.coroutines.Dispatchers

@@ -1,11 +1,11 @@
 package com.example.binlist.utils
 
-import com.example.binlist.data.network.BankDto
-import com.example.binlist.data.network.CardDto
-import com.example.binlist.data.network.CountryDto
-import com.example.binlist.domain.Bank
-import com.example.binlist.domain.Card
-import com.example.binlist.domain.Country
+import com.example.binlist.data.network.dto.BankDto
+import com.example.binlist.data.network.dto.CardDto
+import com.example.binlist.data.network.dto.CountryDto
+import com.example.binlist.domain.models.Bank
+import com.example.binlist.domain.models.Card
+import com.example.binlist.domain.models.Country
 
 fun CardDto.asCard() = Card(
     country = this.country.asCountry(),

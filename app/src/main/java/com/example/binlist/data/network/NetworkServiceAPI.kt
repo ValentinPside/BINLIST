@@ -1,5 +1,6 @@
 package com.example.binlist.data.network
 
+import com.example.binlist.data.network.dto.CardDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 
