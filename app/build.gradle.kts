@@ -1,7 +1,9 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.kompilerKsp)
+    id("kotlin-kapt")
 }
 
 android {
@@ -34,6 +36,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        buildConfig = true
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -45,4 +52,40 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    //coroutines
+    implementation(libs.kotlinx.coroutines.android)
+
+    //network
+    implementation(libs.gson)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+
+    // navigation
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
+    // ui
+    implementation(libs.glide)
+
+    //lifecycle
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.savedstate)
+    implementation(libs.androidx.fragment.ktx)
+
+    //dagger
+    implementation(libs.dagger)
+    implementation(libs.dagger.android)
+    implementation(libs.dagger.android.support)
+    kapt(libs.dagger.compiler)
+    kapt(libs.dagger.android.processor)
+
+    // room
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    kapt(libs.room.compiler)
 }
