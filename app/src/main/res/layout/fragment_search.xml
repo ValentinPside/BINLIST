@@ -1,13 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.SearchFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Search" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/editTextNumberSigned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bin"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="COUNTRY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned"
+        android:theme="@style/gray_style"/>
+
+    <TextView
+        android:id="@+id/countryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Россия"
+        app:layout_constraintEnd_toEndOf="@+id/country"
+        app:layout_constraintStart_toStartOf="@+id/country"
+        app:layout_constraintTop_toBottomOf="@+id/country"
+        android:theme="@style/bold_style"/>
+
+    <TextView
+        android:id="@+id/coordinatyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(latitude: 56, longitude: 10)"
+        app:layout_constraintEnd_toEndOf="@+id/countryName"
+        app:layout_constraintStart_toStartOf="@+id/countryName"
+        app:layout_constraintTop_toBottomOf="@+id/countryName"
+        android:theme="@style/bold_style"/>
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="SCHEME / NETWORK"
+        app:layout_constraintEnd_toEndOf="@+id/coordinatyName"
+        app:layout_constraintStart_toStartOf="@+id/coordinatyName"
+        app:layout_constraintTop_toBottomOf="@+id/coordinatyName"
+        android:theme="@style/gray_style"/>
+
+    <TextView
+        android:id="@+id/typeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Visa"
+        app:layout_constraintEnd_toEndOf="@+id/type"
+        app:layout_constraintStart_toStartOf="@+id/type"
+        app:layout_constraintTop_toBottomOf="@+id/type"
+        android:theme="@style/bold_style"/>
+
+    <TextView
+        android:id="@+id/bank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="BANK"
+        app:layout_constraintEnd_toEndOf="@+id/typeName"
+        app:layout_constraintStart_toStartOf="@+id/typeName"
+        app:layout_constraintTop_toBottomOf="@+id/typeName"
+        android:theme="@style/gray_style"/>
+
+    <TextView
+        android:id="@+id/nameAndCityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Jyske Bank, Hjørring"
+        app:layout_constraintEnd_toEndOf="@+id/bank"
+        app:layout_constraintStart_toStartOf="@+id/bank"
+        app:layout_constraintTop_toBottomOf="@+id/bank"
+        android:theme="@style/bold_style"/>
+
+    <TextView
+        android:id="@+id/urlName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="www.jyskebank.dk"
+        android:textColor="@color/Blue_yp"
+        android:theme="@style/bold_style"
+        app:layout_constraintEnd_toEndOf="@+id/nameAndCityName"
+        app:layout_constraintStart_toStartOf="@+id/nameAndCityName"
+        app:layout_constraintTop_toBottomOf="@+id/nameAndCityName" />
+
+    <TextView
+        android:id="@+id/phoneName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="+4589893300"
+        android:theme="@style/bold_style"
+        app:layout_constraintEnd_toEndOf="@+id/urlName"
+        app:layout_constraintStart_toStartOf="@+id/urlName"
+        app:layout_constraintTop_toBottomOf="@+id/urlName" />
+
+    <TextView
+        android:id="@+id/bin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="IIN / BIN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:theme="@style/gray_style"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
