@@ -23,12 +23,12 @@
         android:id="@+id/country"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="COUNTRY"
+        android:theme="@style/gray_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned"
-        android:theme="@style/gray_style"/>
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <TextView
         android:id="@+id/countryName"
@@ -45,7 +45,7 @@
         android:id="@+id/coordinatyName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="(latitude: 56, longitude: 10)"
+        android:text="(latitude: 156, longitude: 101)"
         app:layout_constraintEnd_toEndOf="@+id/countryName"
         app:layout_constraintStart_toStartOf="@+id/countryName"
         app:layout_constraintTop_toBottomOf="@+id/countryName"
@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Visa"
+        android:text="Visa123"
         app:layout_constraintEnd_toEndOf="@+id/type"
         app:layout_constraintStart_toStartOf="@+id/type"
         app:layout_constraintTop_toBottomOf="@+id/type"
@@ -89,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Jyske Bank, Hjørring"
+        android:text="Jyske Bank123, Hjørring123"
         app:layout_constraintEnd_toEndOf="@+id/bank"
         app:layout_constraintStart_toStartOf="@+id/bank"
         app:layout_constraintTop_toBottomOf="@+id/bank"
@@ -100,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="www.jyskebank.dk"
+        android:text="www.jyske123bank.dk"
         android:textColor="@color/Blue_yp"
         android:theme="@style/bold_style"
         app:layout_constraintEnd_toEndOf="@+id/nameAndCityName"
@@ -112,7 +112,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="+4589893300"
+        android:text="+458989fdgbtr3300"
         android:theme="@style/bold_style"
         app:layout_constraintEnd_toEndOf="@+id/urlName"
         app:layout_constraintStart_toStartOf="@+id/urlName"
@@ -128,4 +128,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:theme="@style/gray_style"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Lookup"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumberSigned"
+        app:layout_constraintStart_toStartOf="@+id/editTextNumberSigned"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@ import javax.inject.Singleton
 )
 interface AppComponent {
 
+    fun searchComponent(): SearchComponent
     @Component.Factory
     interface AppComponentFactory {
         fun create(@BindsInstance context: Context): AppComponent
