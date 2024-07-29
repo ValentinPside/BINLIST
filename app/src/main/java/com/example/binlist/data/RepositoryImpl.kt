@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor(private val api: NetworkServiceAPI): Repository {
 
-    override suspend fun getCard(cardNumber: String): Card {
+    override suspend fun getCard(cardNumber: String): Card? {
         return withContext(Dispatchers.IO) {
             val cardRemote = api.getCardDto(cardNumber)
             cardRemote.asCard()

@@ -7,21 +7,27 @@ import com.example.binlist.domain.models.Bank
 import com.example.binlist.domain.models.Card
 import com.example.binlist.domain.models.Country
 
-fun CardDto.asCard() = Card(
-    country = this.country.asCountry(),
-    scheme = this.scheme,
-    bank = this.bank.asBank()
-)
+fun CardDto.asCard() = this.country.asCountry()?.let {
+    Card(
+        country = it,
+        scheme = if(!this.scheme.isNullOrEmpty())this.scheme else "-",
+        bank = this.bank.asBank()
+    )
+}
 
-fun CountryDto.asCountry() = Country(
-    name = this.name,
-    latitude = this.latitude,
-    longitude = this.longitude
-)
+fun CountryDto.asCountry() = (if(this.latitude != 0) this.latitude else 0)?.let {
+    (if(this.longitude != 0) this.longitude else 0)?.let { it1 ->
+        Country(
+        name = if(!this.name.isNullOrEmpty())this.name else "-",
+        latitude = it,
+        longitude = it1,
+    )
+    }
+}
 
 fun BankDto.asBank() = Bank(
-    name = this.name,
-    url = this.url,
-    phone = this.phone,
-    city = this.city
+    name = if(!this.name.isNullOrEmpty())this.name else "",
+    url = if(!this.url.isNullOrEmpty())this.url else "",
+    phone = if(!this.phone.isNullOrEmpty())this.phone else "",
+    city = if(!this.city.isNullOrEmpty())this.city else ""
 )
