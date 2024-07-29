@@ -8,15 +8,23 @@ import androidx.room.PrimaryKey
     tableName = "cardTable"
 )
 data class CardEntity(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id: String,
-    @ColumnInfo(name = "name")
-    val name: String,
-    @ColumnInfo(name = "icon")
-    val icon: String,
-    @ColumnInfo(name = "isConstant")
-    val isConstant: Boolean,
-    @ColumnInfo(name = "userId")
-    val userId: String
+    val id: Int,
+    @ColumnInfo(name = "scheme")
+    val scheme: String,
+    @ColumnInfo(name = "countryName")
+    val countryName: String,
+    @ColumnInfo(name = "latitude")
+    val latitude: Int,
+    @ColumnInfo(name = "longitude")
+    val longitude: Int,
+    @ColumnInfo(name = "bankName")
+    val bankName: String,
+    @ColumnInfo(name = "url")
+    val url: String,
+    @ColumnInfo(name = "phone")
+    val phone: String,
+    @ColumnInfo(name = "city")
+    val city: String,
 )
