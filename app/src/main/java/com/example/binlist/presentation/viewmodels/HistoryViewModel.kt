@@ -1,32 +1,31 @@
-package com.example.binlist.presentation
+package com.example.binlist.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.binlist.R
 import com.example.binlist.domain.DbRepository
-import com.example.binlist.domain.Repository
-import com.example.binlist.domain.models.Card
+import com.example.binlist.domain.models.RvCard
+import com.example.binlist.utils.asRvCardList
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class SearchViewModel @Inject constructor(
-    private val repository: Repository,
+class HistoryViewModel @Inject constructor(
     private val dbRepository: DbRepository
 ) : ViewModel() {
 
-    private val state = MutableStateFlow(SearchState())
+    private val state = MutableStateFlow(HistoryState())
     fun observeUi() = state.asStateFlow()
 
-    fun getCard(bin: String) {
+    fun getCardList() {
         viewModelScope.launch {
             try {
-                val card = repository.getCard(bin)
-                state.update { it.copy(card = card, error = null) }
-                if (card != null) {
-                    dbRepository.addNewCard(card, bin.toInt())
+                var listRv = mutableListOf<RvCard>()
+                dbRepository.getCardList().collect { it ->
+                    listRv.addAll(it.asRvCardList())
+                    state.update { it.copy(list = listRv, error = null) }
                 }
             } catch (e: Exception) {
                 state.update { it.copy(error = R.string.error_message) }
@@ -35,7 +34,7 @@ class SearchViewModel @Inject constructor(
     }
 }
 
-data class SearchState(
-    val card: Card? = null,
+data class HistoryState(
+    val list: List<RvCard>? = null,
     val error: Int? = null
 )

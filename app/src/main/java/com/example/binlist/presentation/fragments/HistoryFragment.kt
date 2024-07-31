@@ -1,4 +1,4 @@
-package com.example.binlist.presentation
+package com.example.binlist.presentation.fragments
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.binlist.app.App
 import com.example.binlist.databinding.FragmentHistoryBinding
+import com.example.binlist.presentation.Adapter
+import com.example.binlist.presentation.viewmodels.HistoryViewModel
 import com.example.binlist.utils.Factory
 import kotlinx.coroutines.launch
 
@@ -41,6 +43,7 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecycler()
+        viewModel.getCardList()
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.observeUi().collect { state ->
@@ -61,9 +64,13 @@ class HistoryFragment : Fragment() {
         adapter = Adapter()
         binding.cardRecycler.adapter = adapter
         binding.cardRecycler.layoutManager = LinearLayoutManager(requireContext())
-        binding.cardRecycler.addItemDecoration(DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL))
+        binding.cardRecycler.addItemDecoration(
+            DividerItemDecoration(
+                requireContext(),
+                LinearLayoutManager.VERTICAL
+            )
+        )
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

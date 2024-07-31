@@ -13,7 +13,8 @@ import com.example.binlist.domain.models.RvCard
 fun List<CardEntity>.asRvCardList() = this.map { it.asRvCard() }
 fun CardEntity.asRvCard() = RvCard(
     scheme = this.scheme,
-    number = this.id.toString()
+    number = this.id.toString(),
+    country = this.countryName
 )
 
 fun Card.asCardEntity(number: Int) = CardEntity(

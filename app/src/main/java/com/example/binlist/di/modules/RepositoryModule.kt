@@ -1,4 +1,4 @@
-package com.example.binlist.di
+package com.example.binlist.di.modules
 
 import com.example.binlist.data.RepositoryImpl
 import com.example.binlist.domain.Repository
