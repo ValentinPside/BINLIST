@@ -1,6 +1,6 @@
-package com.example.binlist.di
+package com.example.binlist.di.components
 
-import com.example.binlist.presentation.SearchViewModel
+import com.example.binlist.presentation.viewmodels.SearchViewModel
 import dagger.Subcomponent
 
 @Subcomponent

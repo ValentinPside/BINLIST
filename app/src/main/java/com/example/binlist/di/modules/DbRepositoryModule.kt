@@ -1,4 +1,4 @@
-package com.example.binlist.di
+package com.example.binlist.di.modules
 
 import com.example.binlist.data.DbRepositoryImpl
 import com.example.binlist.domain.DbRepository

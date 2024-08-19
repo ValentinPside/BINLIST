@@ -1,6 +1,6 @@
-package com.example.binlist.di
+package com.example.binlist.di.components
 
-import com.example.binlist.presentation.HistoryViewModel
+import com.example.binlist.presentation.viewmodels.HistoryViewModel
 import dagger.Subcomponent
 
 @Subcomponent

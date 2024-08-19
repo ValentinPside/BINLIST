@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">BINLIST</string>
     <string name="error_message">Что-то пошло не так</string>
+    <string name="story_head">Вы искали</string>
+    <string name="hint_bin">45717360</string>
+    <string name="country_placeholder">COUNTRY</string>
+    <string name="denmark_placeholder">Denmark</string>
+    <string name="latitude_56_longitude_10_placeholder">(latitude: 56, longitude: 10)</string>
+    <string name="scheme_network_placeholder">SCHEME / NETWORK</string>
+    <string name="visa_placeholder">Visa</string>
+    <string name="bank_placeholder">BANK</string>
+    <string name="jyske_bank_hj_rring_placeholder">Jyske Bank, Hjørring</string>
+    <string name="www_jyskebank_dk_placeholder">www.jyskebank.dk</string>
+    <string name="number_placeholder">+458989300</string>
+    <string name="iin_bin_placeholder">IIN / BIN</string>
+    <string name="lookup_placeholder">Lookup</string>
 </resources>

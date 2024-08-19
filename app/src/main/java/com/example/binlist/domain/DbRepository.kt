@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface DbRepository {
 
-    suspend fun getCardList(): Flow<List<CardEntity>>
+    fun getCardList(): Flow<List<CardEntity>>
 
     suspend fun addNewCard(card: Card, number: Int)
 

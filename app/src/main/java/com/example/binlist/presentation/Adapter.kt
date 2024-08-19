@@ -10,7 +10,7 @@ import com.example.binlist.R
 import com.example.binlist.databinding.CardItemBinding
 import com.example.binlist.domain.models.RvCard
 
-class Adapter: ListAdapter<RvCard, Adapter.ViewHolder>(DiffUtilHotel()) {
+class Adapter : ListAdapter<RvCard, Adapter.ViewHolder>(DiffUtilHotel()) {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = CardItemBinding.bind(itemView)
@@ -18,6 +18,7 @@ class Adapter: ListAdapter<RvCard, Adapter.ViewHolder>(DiffUtilHotel()) {
         fun bind(card: RvCard) {
             binding.scheme.text = card.scheme
             binding.number.text = card.number
+            binding.countryText.text = card.country
         }
     }
 

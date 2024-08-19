@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class RepositoryImpl @Inject constructor(private val api: NetworkServiceAPI): Repository {
+class RepositoryImpl @Inject constructor(private val api: NetworkServiceAPI) : Repository {
 
     override suspend fun getCard(cardNumber: String): Card? {
         return withContext(Dispatchers.IO) {

@@ -1,4 +1,4 @@
-package com.example.binlist.di
+package com.example.binlist.di.modules
 
 import com.example.binlist.BuildConfig
 import com.example.binlist.data.network.NetworkServiceAPI
@@ -33,6 +33,7 @@ object NetworkModule {
         .build()
 
     @Provides
-    fun provideApi(retrofit: Retrofit): NetworkServiceAPI = retrofit.create(NetworkServiceAPI::class.java)
+    fun provideApi(retrofit: Retrofit): NetworkServiceAPI =
+        retrofit.create(NetworkServiceAPI::class.java)
 
 }
